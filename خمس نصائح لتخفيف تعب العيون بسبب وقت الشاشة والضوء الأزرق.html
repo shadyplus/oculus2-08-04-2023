@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html class="v2" dir="rtl" nighteye="disabled" data-lt-installed="true"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/jquery.min.js.download"></script>
+
+    <script>
+    function set_validator_errors(){
+        orderValidator.errorTitle = 'يرجى تصحيح الأخطاء التالية'; 
+
+        orderValidator.errorNameField = 'الاسم'; 
+        orderValidator.errorNameMess = 'أدخل أسمك'; 
+        
+        orderValidator.errorPhoneField = 'رقم التليفون'; 
+        orderValidator.errorPhoneMess = 'أدخل رقم الهاتف الصحيح'; 
+        
+        orderValidator.errorAddress = 'أدخل العنوان الصحيح'; 
+        orderValidator.errorRequired = 'يتطلب حقلا'; 
+        orderValidator.errorMaxLength = 'حرف {1} بحد أقصى صالح'; 
+        orderValidator.errorMinLength = 'الحد الأدنى لعدد حروف {1}'; 
+        orderValidator.errorEmailField = 'البريد الإلكتروني';
+        orderValidator.errorEmail = 'تم تحديد بريد إلكتروني غير صالح';
+        }
+    </script>
+    
+<script>
+
+
+window.app = {
+    timestamp: parseInt((new Date()).getTime() / 1000),
+    jq: jQuery,
+    formAction: window.location.href,
+    leadToken: '64312137d152f6.05993750',
+    offers: {"33522":{"id":33522,"country":{"code":"DZ","name":"\u0410\u043b\u0436\u0438\u0440"},"price":"5999","price2":"11998","currency":{"code":"DZD","name":"DA"},"discount":"","delivery_price":"","link":"","product_sku":"","prepaid_info_html":""}},
+    currentOffer: {"id":33522,"country":{"code":"DZ","name":"\u0410\u043b\u0436\u0438\u0440"},"price":"5999","price2":"11998","currency":{"code":"DZD","name":"DA"},"discount":"","delivery_price":"","link":"","product_sku":"","prepaid_info_html":""},
+    allowedCountries: ["DZ"],
+    _setOfferId: false,
+    streamHid: '',
+    showcaseUrl: '',
+    disablePhoneMask: Boolean(),
+    
+    setOffer: function (offerId) {
+        if (offerId == this._setOfferId) {
+            return ;
+        }
+        this._setOfferId = offerId;
+        if (offerId) {
+            var offer = app.offers[offerId];
+            var previousOffer = app.currentOffer;
+            app.currentOffer = offer;
+            var event = this.jq.Event("offerchange");
+            event.previousOffer = previousOffer;
+            event.currentOffer = app.currentOffer;
+            this.jq(document).trigger(event);
+            this.updatePage(offer);
+        } else {
+            $('input[name=country]').val('');
+        }
+    },
+    
+    updatePage: function(offer) {
+        $('x-newprice').html(offer.price);
+        $('x-oldprice').html(offer.price2);
+        $('x-currency').html(offer.currency.name);
+        $('input[name=offer], select[name=offer]').val(offer.id);
+        $('input[name=country]').val(offer.country.code);
+    },
+
+    blockForm: function() {
+        // Блокируем кнопки при отправке формы
+        $('input[type=submit]', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        $('button', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        app.incompleteOrder.lock = true;
+        clearTimeout(app.incompleteOrder.timer);
+    },
+
+    unblockForm: function() {
+        $('input[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        $('button[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        app.incompleteOrder.lock = false;
+        clearTimeout(app.incompleteOrder.timer);
+    }
+
+};
+
+
+ </script>
+
+
+
+
+<script src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/jquery.min.js(1).download"></script>
+  <style>
+    .ac_footer {
+      position: relative;
+      top: 10px;
+      height: 0;
+      text-align: center;
+      margin-bottom: 70px;
+      color: #A12000;
+    }
+    
+    .ac_footer a {
+      color: #A12000;
+    }
+    
+    .ac_footer p {
+      text-align: center;
+    }
+    
+    img[height="1"],
+    img[width="1"] {
+      display: none !important;
+    }
+  </style>
+  <!--retarget-->
+  <!--retarget-->
+  <script src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/9.min.js.download" type="text/javascript">
+  </script>
+  <meta data-text-id="168843">
+  
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport">
+  <title>خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق</title>
+  <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAxlBMVEUAAAArnysroCsroCssoCwroCssoCwsoCwsnywroCsrnysroCsrnyssoCwroCssoCwsnywsoCwsnywroCssoCwsnywsnywsoCwrnyssnywroCssoCxuvW674Lvf8N82pDbB48H////J58mLyov+/v7H5cc0ozQtoC3N6M294b3p9enE5MQzozOs2azM6MwuoS5Nr03s9uzC48IyojIuoC6v26/8/fx0wHRKrUoxojGy3LL7/ftvvm8voS+13bX6/Ppuvm6437jzkwAxAAAAG3RSTlMABEyQsrJMRtpEaPz8aEb8/EQE2gRMspBMRAQCf9YPAAAArklEQVQYGQXBwU7CUBRF0X3evelrm2CrFQfO/P+/0oEDCg2iARR6XEsAkqQ1/gwIqJoA2OsMgl6jJGwfdUI8aJQAsI9a4in6EACI+BpLtBIAqKSmQzkgAMjMFCoTou2gr2quouTywkaqkroZcFlx2+5qvTUzmKls8S7fPnL4BMwS7S3L9+MU74Dvlx/R1UGKO2DP61mw8SAJ20edCPidrmnbXPo9APC6jcxongH+Afk4PNpkBUXoAAAAAElFTkSuQmCC"> 
+  <!-- <link href="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/font-awesome.min.css" rel="stylesheet"> -->
+  <link href="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/main.css" rel="stylesheet">
+  <link href="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/form-style.css" rel="stylesheet">
+</head>
+
+<body class="item">
+  <!--retarget-->
+  <!--retarget-->
+  
+  <div id="header-wrapper">
+    <div id="top-menu-follow">
+      <div class="mmenu" id="mmenu">
+        <div class="LinkList main-menu menu-display" data-version="1" id="LinkList60">
+          <ul id="nav">
+            <li><ahref="#reg_form"><span> الصفحة الرئيسية </span></a></li>
+            <li><ahref="#reg_form"><span> عن المنتج </span></a></li>
+            <li><ahref="#reg_form"><span> المتجر <i class="fa fa-angle-down"></i></span></a>
+              <ul class="sub-menu">
+                <li><ahref="#reg_form"><span> ديكور المنزل </span></a></li>
+              </ul>
+            </li>
+            <li><ahref="#reg_form"><span> أسلوب الحياة <i class="fa fa-angle-down"></i></span></a>
+              <ul class="sub-menu">
+                <li><ahref="#reg_form"><span> الرباط </span></a></li>
+                <li><ahref="#reg_form"><span> حياة عائلية </span></a></li>
+                <li><ahref="#reg_form"><span> تسلية </span></a></li>
+                <li><ahref="#reg_form"><span> كتب </span></a></li>
+                <li><ahref="#reg_form"><span> نصائح </span></a></li>
+                <li><ahref="#reg_form"><span> تنظيف </span></a></li>
+                <li><ahref="#reg_form"><span> حيوانات أليفة </span></a></li>
+                <li><ahref="#reg_form"><span> هدايا </span></a></li>
+              </ul>
+            </li>
+            <li><ahref="#reg_form"><span> طعام <i class="fa fa-angle-down"></i></span></a>
+              <ul class="sub-menu">
+                <li><ahref="#reg_form"><span> الوجبات والأطباق الرئيسية </span></a></li>
+                <li><ahref="#reg_form"><span> الجانبين </span></a></li>
+                <li><ahref="#reg_form"><span> حلويات </span></a></li>
+                <li><ahref="#reg_form"><span> وجبات خفيفة </span></a></li>
+                <li><ahref="#reg_form"><span> مشروبات </span></a></li>
+              </ul>
+            </li>
+            <li><ahref="#reg_form"><span> جمال </span></a></li>
+            <li><ahref="#reg_form"><span> كولاب </span></a></li>
+            <li><ahref="#reg_form"><span> توضيح / سياسة الخصوصية </span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+    <div id="header">
+      <div class="header" id="logo">
+        <div class="widget Header" data-version="1" id="Header1">
+          <div id="header-inner">
+            <div class="titlewrapper">
+              <h1 class="title"><ahref="#reg_form">مشاكل العيون </a></h1></div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end header -->
+  </div>
+  <!-- end header-wrapper -->
+  <!-- Slider Ends -->
+  <div id="content-wrapper">
+    <div class="above-content no-items section" id="above-content"></div>
+    <!-- end above-content -->
+    <div id="content">
+      <div class="content-main">
+        <div class="content-blog">
+          <div class="above-posts no-items section" id="above-posts"></div>
+          <!-- end above-posts -->
+          <div class="section" id="posts">
+            <div class="Blog" data-version="1" id="Blog1">
+              <div class="blog-posts hfeed">
+                <div class="post-outer">
+                  <div class="post hentry">
+                    <h3 class="post-title entry-title" itemprop="name">  نصائح لتخفيف تعب العيون بسبب الجلوس وقت طويل أمام  شاشات الكمبيوتر و التلفاز و التليفون  </h3>
+                    <div class="post-header"><abbr class="date-header"><script type="text/javascript">
+              dtime_nums(-7, true)
+             </script>02.04.2023</abbr>
+                      <div class="post-header-line-1"></div>
+                    </div>
+                    <div class="post-body entry-content" id="post-body-5998764097615170663" itemprop="articleBody">
+                      <br>
+                      <div>
+                        <img style="max-width: 100%;" src="img/main.png" alt="">
+                      </div>
+                      <div class="MsoNormal"><span style="font-family: inherit;">يعتبر الجلوس لفترات طويلة أمام شاشات الكمبيوتر والهواتف الذكية من العادات السيئة التي يتبعها العديد من الأشخاص في الوقت الحاضر. ولكن، الجلوس لفترات طويلة يمكن أن يؤدي إلى العديد من المشكلات الصحية والنفسية.
+
+
+                      </div>
+                      <h4><span style="background: white; color: black; font-weight: normal;"><span style="font-family: inherit;"> إليك بعض الأمور التي يمكن أن تحدث نتيجة الجلوس لفترات طويلة أمام شاشات الكمبيوتر والهواتف الذكية:
+
+                      </span></span></h4>
+                      <div class="MsoNormal"><span style="font-family: inherit;"><span style="background: white; color: black;"><br></span></span>
+                      </div>
+                      <div class="MsoNormal"><span style="font-family: inherit;"><span style="background: white; color: black;"><br></span></span>
+                      </div>
+                      <ul>
+                        <li>
+                          تأثير على العينين: يمكن أن يؤدي الجلوس لفترات طويلة أمام شاشات الكمبيوتر والهواتف الذكية إلى الإجهاد العيني والتهاب العين.
+                        </li>
+                        <li>
+                          تعرض العين للشاشات الرقمية يسبب تسارعًا في الضوء الأزرق الذي يؤثر على العين، ويزيد من احتمالية الإصابة بمشاكل في النظر، ويمكن أن يتسبب في زيادة خطر الإصابة بالمياه البيضاء، وهي حالة تصيب العدسة الواضحة في العين وتؤدي إلى ضعف الرؤية وتشوه الألوان.
+                        </li>
+                     </ul>       
+                                    <div class="MsoNormal"><span style="font-family: inherit;"><span style="background: white; color: black;"><br></span></span>
+                      </div>
+                      <hr>
+
+                        
+                        <h4><strong><span style="background: white; color: #222222; font-weight: normal;"><span style="font-family: inherit;">كيف تتخلص من مشاكل إجهاد العين ، والحفاظ على الرؤية الطبيعية ودعم صحة العين ؟
+                       </span></span></strong></h4>
+                       <p>
+                          هذا ليس بالأمر الصعب ، لكنه يتطلب الصبر و الإلتزام . لكن الأمر يستحق ذلك وسيؤتي ثماره بعد عدة مرات
+                       </p>
+                       <p > <strong>
+                         عن طريق إستخدام OculusVision فهو منتج طبيعي 100% و ليس له اثار جانبية على الصحة .</strong>
+                       </p>
+                       <hr>
+                       <h4><span style="font-family: inherit; font-weight: normal;"><span style="background: white; color: black;"> عن <span class="il"><a href="#reg_form"> Oculus vision</a> </span></span><span style="-webkit-text-stroke-width: 0px; float: none; font-variant-caps: normal; font-variant-ligatures: normal; orphans: 2; text-decoration-color: initial; text-decoration-style: initial; widows: 2; word-spacing: 0px;"> </span> : </span></h4>
+                       <div class="MsoNormal"><span style="font-family: inherit;"><span style="background: white;">  </span><span class="il"><ahref="#reg_form"><a href="#reg_form"> Oculus vision</a> </a></span>    هو مكمل غذائي في شكل حبوب . و تم صنعه  للمساعدة في مكافحة إجهاد العين  والحفاظ على الرؤية الطبيعية من خلال عمل اللوتين والمكونات الأخرى
+                         ودعم صحة العين وتحسين حدة البصر بمضادات الأكسدة والمغذيات الوقائية مثل اللوتين.بالإضافة إلى ذلك ، يساعد <a href="#reg_form"> Oculus vision</a> في مكافحة إجهاد العين وإبطاء تطور التنكس البقعي المرتبط بالعمر. </span>
+                         <br>
+                       </div>
+                       <div>
+                         <p>
+                          تجاهل مشاكل العيون يمكن أن يؤدي إلى مخاطر صحية خطيرة. وفيما يلي بعض المخاطر الشائعة لتجاهل مشاكل العيون:
+                         </p>
+                         <ul>
+                          <li>
+                            فقدان البصر: إذا لم يتم التخلص من المشاكل المرتبطة بالعين بشكل صحيح ، فإنه يمكن أن يؤدي إلى فقدان البصر أو تدهور الحالة .
+  
+                          </li>
+                          <li>
+                            التعرض للإصابة: قد يزيد تجاهل مشاكل العين من خطر الإصابة بمشاكل اكبر في العين، مثل تشوه الشبكية أو الكسور العظمية أو الالتهابات.
+  
+                          </li>
+                          <li>
+                            المشاكل الأخرى للصحة: يمكن أن تكون المشاكل في العين دليلاً على مشاكل صحية أخرى في الجسم، مثل السكري أو ارتفاع ضغط الدم أو مشاكل القلب.
+  
+                          </li>
+                          <li>
+                            لذا يجب علينا التخلص من مشاكل العيون في أسرع وقت و التخلص منها بشكل دائم و ليس فقط بشكل مؤقت كما يفعل الكثير من الأشخاص .
+  
+  
+                          </li>
+                         </ul>
+                         <hr>
+                       <h4><strong><span style="background: white; color: #222222; font-weight: normal;"><span style="font-family: inherit;">ما هي مكونات <a href="#reg_form"> Oculus vision</a> ؟
+                       </span></span></strong></h4>
+                       <p style="     text-align: center;
+                       font-size: larger; color: #36b;">
+                         -- مستخلص اللوتين
+                       </p>
+<p>
+  مستخلص اللوتين يمكن أن يساعد في تحسين صحة العين، حيث يقوم بحماية العين من الأضرار التي يمكن أن تسببها الأشعة فوق البنفسجية والتي يمكن أن تؤدي إلى مشاكل مثل المياه البيضاء والماكولار ديجنيريشن.
+
+</p>                       <p>
+                         يتميز مستخلص اللوتين بأنه آمن وفعال، حيث لا توجد له آثار جانبية .
+                       </p>
+                       <p style="    text-align: center;
+                       font-size: larger;color: #36b;">
+                         -- السيليكا الغروية
+                       </p>
+                       <p>
+                         السيليكا الغروية هي عنصر معدني مهم لصحة الجسم، حيث تشكل جزءًا من العديد من الأنسجة في الجسم مثل العظام والأنسجة الضامة والغضاريف. كما أنها تعتبر مضاداً للأكسدة الطبيعي وتساعد في تقوية الجهاز المناعي والحفاظ على صحة الجلد والشعر والأظافر.
+                       </p>
+ 
+                       <p style="    text-align: center;
+                       font-size: larger;color: #36b;">
+                         -- ستيرات المغنيسيوم
+                       </p>
+                       <p>
+                         إن المغنيسيوم يعتبر مهمًا للصحة العامة و يكون مفيدًا للعين في بعض الحالات
+                       </p>
+                       <p>
+                         أن استهلاك الأطعمة الغنية بالمغنيسيوم يمكن أن يساعد في تحسين صحة العين، حيث يمكن الحصول على المغنيسيوم من الخضروات الورقية الخضراء والمكسرات والحبوب والبقوليات والأسماك واللحوم او عن طريق تناوله في شكل مكمل غذائي كما هو الحال في OculusVision.
+                       </p>
+                       <hr>
+                       <div style="text-align: center; ">
+                        <img  src="img/main2.png" alt="">
+                       </div>
+                       <h4><strong><span style="background: white; color: #222222; font-weight: normal;"><span style="font-family: inherit;"> مميزات OculusVision؟
+                       </span></span></strong></h4>
+                       <ul >
+                        <li>
+                          تخفيف العيون المتعبة والجافة والشجاعة.
+
+                        </li>
+                        <li>
+                          يخفف من الوخز واحمرار العين والالتهابات.
+
+                        </li>
+                        <li>
+                          المساعدة على  الرؤية الباهتة.
+
+                        </li>
+                        <li>
+                          المساعدة على  حدة العين.
+
+                        </li>
+                         <li>
+                           يساعد في مكافحة إجهاد العين.
+                         </li>
+                         <li>
+                           الحفاظ على الرؤية الطبيعية من خلال عمل اللوتين والمكونات الأخرى.
+                         </li>
+                         <li>
+                           دعم صحة العين.
+                         </li>
+                         <li>
+                           تحسين حدة البصر بمضادات الأكسدة والمغذيات الوقائية مثل اللوتين.
+                         </li>
+                         <li>
+                           بالإضافة إلى ذلك ، يساعد OculusVision في مكافحة إجهاد العين وإبطاء تطور التنكس البقعي المرتبط بالعمر.
+                         </li>
+                       </ul>
+                       <hr>
+                       <h4><strong><span style="background: white; color: #222222; font-weight: normal;"><span style="font-family: inherit;"> كيفية إستخدام OculusVision ؟
+                       </span></span></strong></h4>
+                       <p>
+                         تناول حبة واحدة يومياً مع كوب كبير من الماء مع وجبات الطعام .
+                       </p>
+                       <hr>
+                       <h4><strong><span style="background: white; color: #222222; font-weight: normal;"><span style="font-family: inherit;"> من هم أكثر الأشخاص اللذين ننصحهم بإستخدام OculusVision ؟
+                       </span></span></strong></h4>
+                       <p>
+                         –  يُنصح بهذا المنتج لمساعدة أي شخص يعاني من إجهاد في العين ويقضي الكثير من الوقت أمام الشاشة (كمبيوتر ، ألعاب فيديو ، تلفزيون)
+                       </p>
+                       <p>
+                         – السائقين الليليين
+                       </p>
+                       <p>
+                         – الأشخاص ذوي العيون الفاتحة اللون
+                       </p>
+                       <p>
+                         – الأشخاص الحساسين للأشعة فوق البنفسجية
+                       </p>
+                       <p>
+                         – من المهم بشكل خاص استخدام OculusVision للأشخاص الذين تزيد أعمارهم عن 55 عامًا والذين يعانون من مشاكل في الرؤية وعدم الراحة
+                       </p>
+                       
+ 
+ 
+ 
+                       </div>
+                      <div class="MsoNormal">
+                        <br>
+                      </div>
+                      <div class="separator" style="clear: both;">
+                        <ahref="#reg_form" style="margin-left: 1em; margin-right: 1em;"><img alt="" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/product.png"></a>
+                      </div>
+                      <div class="MsoNormal"><span style="font-family: inherit;"><span style="background: white; color: black;"><br></span></span>
+                      </div>
+                      <a name="more"></a>
+                   
+                      <br>
+                      <br>
+                     
+                      
+                      <div>
+                        <!-- <div class="MsoNormal"><span style="font-family: inherit;"><span style="background: white;"> وفقًا لموقع Oculus vision على الويب، نقضي وقتًا أطول في التحديق في الشاشات الرقمية من أجهزة الكمبيوتر إلى الأجهزة اللوحية والقارئات الإلكترونية والهواتف الذكية والأجهزة الإلكترونية الأخرى. عندما نحدق في شاشاتنا الرقمية، نتعرض لضوء أزرق عالي الطاقة، وهو أحد مكونات الضوء المرئي. لا تقوم أعيننا بتصفية الضوء الأزرق بسهولة ويمكن أن يؤثر التعرض المفرط سلبًا على الرؤية. يمكن أن يؤدي الإفراط في استخدام الشاشات الرقمية إلى إصابة العين وإحساسها بالتعب، وهو ما يسمى إجهاد العين الرقمي. </span></span>
+                        </div> -->
+                        <!-- <div class="MsoNormal">
+                          <br>
+                        </div> -->
+                        <div class="MsoNormal"><span style="background-color: white; font-family: inherit;"><br></span>
+                          <br>
+                          <h4><span style="background-color: white; font-family: inherit; font-weight: normal;"> لماذا الجلوس امام الشاشات (التليفون- التلفزيون- الكمبيوتر - التليفون) يجعل عيني تشعر بالتعب الشديد؟ </span></h4><span style="background-color: white; font-family: inherit;"><br></span></div>
+                      </div>
+                      <div><span style="background: white; font-family: inherit;">    ذلك بسبب </span><span style="background: white; font-family: inherit; line-height: 107%;"> قضاء وقت طويل  في النظر إلى الشاشات! تتعب عضلات أعيننا التي تركز على الأشياء القريبة. يقلل الضوء الأزرق عالي الطاقة أيضًا من التباين، مما يجعل أعيننا تضبط التركيز بإستمرار وتزيد من إرهاق عضلات العين. يمكن أن يسبب هذا آثارًا قصيرة المدى لإجهاد العين الرقمي، بما في ذلك: </span></div>
+                      <div><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"></span></span>
+                        <br>
+                        <div class="MsoNormal"></div>
+                        <ul>
+                          <li><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"><div class="MsoNormal"><span style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; line-height: 107%;"> الصداع </span></div>
+                      </span>
+                      </span>
+                      </span>
+                      </span>
+                      </li><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"><li><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"><div class="MsoNormal"><span style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; line-height: 107%;"> عدم وضوح الرؤية </span></div>
+                    </span>
+                    </span>
+                    </li>
+                    <li><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"><div class="MsoNormal"><span style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; line-height: 107%;"> عيون جافة </span></div>
+                  </span>
+                  </span>
+                  </li>
+                  <li><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"><div class="MsoNormal"><span style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; line-height: 107%;"> إجهاد العين </span></div>
+                </span>
+                </span>
+                </li>
+                <li><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"><div class="MsoNormal"><span style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; line-height: 107%;"> إرهاق العين </span></div>
+              </span>
+              </span>
+              </li>
+              <li><span style="background: white; line-height: 107%;"><span style="font-family: inherit;"><div class="MsoNormal"><span style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; line-height: 107%;"> تأثيرات طويلة المدى على صحة العين بشكل عام </span></div>
+            </span>
+            </span>
+            </li>
+            </span>
+            </span>
+            </ul>
+           
+         
+          <span style="background: white; line-height: 107%;">
+                  <span style="font-family: inherit;"><div>
+                  <span style="font-family: inherit;"><span style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; font-weight: normal;"><br></span></span>
+          </div>
+          <div>
+            
+            <!-- <table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: right;">
+              <tbody>
+                <tr>
+                  <td style="text-align: center;">
+                    <ahref="#reg_form" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="Sitka Wild Alaskan Coho Salmon" border="0" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/i2.jpg"></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tr-caption" style="text-align: center;"><span><span style="color: #353535; font-family: inherit; font-size: x-small;"> سمك السلمون </span>
+                    <br>
+                    </span>
+                    <br>
+                    <div style="font-size: small; text-align: justify;"><span><span style="color: #353535;"><br></span></span>
+                    </div>
+                    <div style="font-size: small; text-align: justify;"><span><span style="color: #353535;"><br></span></span>
+                    </div><span><br></span>
+                    <br>
+                    <div style="text-align: justify;">
+                      <div class="MsoNormal"><span> مصدر آخر رائع لتغذية العين الصحية يأتي من المأكولات البحرية مثل الجمبري والكركند، ومع ذلك، فإن أفضل مصدر في الغذاء هو سمك السلمون. تشير الأبحاث السريرية إلى أننا بحاجة إلى 400 جرام على الأقل من المأكولات البحرية يوميًا لفوائد صحة العين. على سبيل المثال، قد يحتاج المرء إلى تناول حصة واحدة من سمك السلمون السوكي كل يوم أو حصتين من سلمون كوهو كل يوم أو 8 حصص من سلمون كينج. </span></div>
+                    </div>
+                    <br>
+                    <div class="MsoNormal"><span style="font-family: inherit; font-size: small;"> نظرًا لأن الكثير من الأشخاص لا يأكلون ما يكفي من هذه الأنواع من الأطعمة، فلدينا مساعد مع مكملات Oculus vision. </span></div><span style="font-family: inherit;"><span><span style="font-size: small;"><br></span></span>
+                    </span>
+                    <br>
+                    <div class="separator" style="clear: both; text-align: center;">
+                      <ahref="#reg_form" style="margin-left: 1em; margin-right: 1em;"><img alt="Oculus vision Gummies Supplements #ad" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/bank.png" title="Oculus vision Gummies Supplements #ad "></a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table> -->
+          </div>
+          </span>
+          </span>
+        </div>
+       
+
+        <span  style="font-weight: 700; font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "> يود المنتجون أيضًا الإشارة إلى أن حبوب OculusVision تساعدك على : </span>
+        <br><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "><br></span><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "> تقليل الضرر الناجم عن وميض الضوء الأزرق المنبعث من أجهزة التلفزيون وأجهزة الكمبيوتر والهواتف الذكية والشاشات الأخرى .</span>
+        <br><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "><br></span><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "> المساعدة على التخلص من إنخفاض  ضغط العين .</span>
+        <br><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "><br></span><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "> المساعدة على التخلص من  قصر النظر وطول النظر واللابؤرية. </span>
+        <br><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "><br></span><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "> تقليل مخاطر الإصابة بإعتام عدسة العين والزرق. </span>
+        <br><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "><br></span><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "> المساعدة على التخلص  من خطر  فقدان البصر المبكر بسبب التقدم في السن. </span>
+        <br><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "><br></span><span style="font-family: inherit; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-size: large; "><br></span>
+        <div style="clear: both;"></div>
+        <br>
+        <blockquote style="font-size: large;
+        padding: 0;
+        margin: 0;
+        border: 2px solid;
+        padding: 13px;
+        border-radius: 13px;
+        background: antiquewhite;
+        font-family: system-ui;">
+          من المهم بشكل خاص استخدام OculusVision للأشخاص الذين تزيد أعمارهم عن<span style="color: #A12000; font-weight: 700;"> 55 عامًا</span> والذين يعانون من مشاكل في الرؤية وعدم الراحة والسائقين الليليين
+        </blockquote>
+        <h4><strong><span style="background: white; color: #222222; font-weight: normal;"><span style="font-family: inherit;"> كيف تحصل على  OculusVision في الجزائر   ؟ 
+        </span></span></strong></h4>
+        <ul>
+              <li>
+                 عن طريق ملئ النموذج في الأسفل ببياناتك إسنك و رقم هاتفك
+
+              </li>
+              <li>
+                 بعد ذلك سوف يتم التواصل معك من قبل الشركة المصنعة لتأكيد عنوان الوصول  
+              </li>
+              <li>
+                 بعد ذلك في خلال مدة قصيرة سوف يتم توصيل المنتج لك عن طريق عامل التوصيل . و الدفع فقط عند إستلام المنتج .
+              </li>
+          </ul>
+
+
+      </div>
+      
+      <!--   FORM   -->
+      <div class="order_block__wrapper" id="reg_form">
+        <h1 style="text-align: center;text-align: center;background: #ea4747;border-top-right-radius: 11px;border-top-left-radius: 11px;">نموذج الطلب الرسمي </h1>
+        <div class="prod_img_wrapper"><img class="prod_img" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/product.png" style="margin-right: -20px;width: 75%;">
+           <div style="text-align: center;">
+            <h4><strong>السعر قبل التخفيض : <span style="text-decoration: line-through;">11998 D.A</span></strong></h4>
+            <h4 style="font-size: xx-large;"><strong>السعر بعد التخفيض : <span style="font-size: xx-large;">5999 D.A</span></strong></h4>
+            <p style="text-align: center; margin: 0;"> عند شرائك دورة OculusVision</p>
+           </div>
+        </div>
+        <form action="#" class="form order_form js-form" id="order_form" method="post" autocomplete="on"><input type="hidden" name="stream_hid" value=""><input type="hidden" name="code_confirm" value=""><input type="hidden" name="visit_duration2" value=""><input type="hidden" name="visit_duration1" value="1075"><input type="hidden" name="timezone_int" value="3"><input type="hidden" name="local_time" value=""><input type="hidden" name="lead_token" value="64312137d152f6.05993750"><input type="hidden" name="country" value="DZ">
+        
+            <label class="data_label" for="name"> أدخل اسمك </label>
+            <div class="input-group tooltip-hide">
+                <input class="rulet_input" name="name" placeholder="اسم" required="required" type="text" autocomplete="name">
+            </div>
+            <label class="data_label" for="phone"> أدخل رقم هاتفك </label>
+            <div class="input-group tooltip-hide" dir="ltr" style="text-align: right">
+                <input class="rulet_input" style="direction: ltr;text-align: left;" minlength="13" maxlength="13" name="phone" placeholder="+213" required="required" type="tel" autocomplete="tel">
+            </div>
+            <button style="margin-bottom: 20px;" class="button__text article__btn" type="submit"> إتمام الطلب </button>
+        </form>
+    </div>
+      <div class="post-footer">
+        <div class="post-footer-line post-footer-line-1"><span class="post-author vcard"> نُشر في تاريخ  <span class="fn">
+          </span>
+          </span><span class="post-timestamp"> : <abbr class="published"><script type="text/javascript">
+                dtime_nums(-7, true)
+               </script></abbr></span><span class="post-location"></span><span class="post-comment-link"></span>
+         
+        </div>
+        <div class="post-footer-line post-footer-line-3"></div>
+      </div>
+      <div class="related-posts-bg">
+        <div class="related-posts-widget">
+          <h2><span> قد يعجبك ايضا </span></h2>
+          <ul class="rpw">
+            <li><a href="#reg_form"><span><img src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/rel1.jpg"></span><strong> كل ما عندي من الأشياء المفضلة، الطبعة الصيفية </strong></a></li>
+            <li><a href="#reg_form"><span><img src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/rel2.jpg"></span><strong> الأواني الزجاجية اللطيفة والصديقة للبيئة التي لم تكن تعلم أنك تريدها </strong></a></li>
+            <li><a href="#reg_form"><span><img src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/rel3.jpg"></span><strong> هل تعاني من الصداع أو الصداع النصفي؟ قد يساعد مصباح الضوء الأخضر </strong></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="comments" id="comments">
+      <h4><span>  تعليقات </span></h4>
+      <div class="comments-content">
+        <div id="comment-holder">
+          <div class="comment-thread toplevel-thread">
+            <ul class="comment-list" id="top-ra">
+              <li class="comment">
+                <div class="avatar-image-container"><img alt="" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/blog-logo.png"></div>
+                <div class="comment-block">
+                  <div class="comment-header"><cite class="user"> رامي </cite><span class="datetime secondary-text"><ahref="#reg_form"><script type="text/javascript">
+                     dtime_nums(-4, true)
+                    </script></a></span></div>
+                  <p class="comment-content"> شكرًا لكم  على نشر هذه المعلومات حتى أتيحت لي لأنني أعاني دائمًا من تأثيرات الإجهاد التي تسببها شاشة الهاتف و الكمبيوتر  والذين يؤثرون سلبًا على عيني ومن خلال هذه المدونة  حول هذا الأمر، فقد عرفت  عن هذا المنتج الرائع و  بالفعل سوف اجربه و اطلبه الأن خصوصاً مع وجود تخفيض 50%! </p><span class="comment-actions secondary-text"><a class="comment-reply"href="#reg_form"> رد </a></span></div>
+              </li>
+              <li class="comment">
+                <div class="avatar-image-container"><img alt="" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/blog-logo.png"></div>
+                <div class="comment-block">
+                  <div class="comment-header"><cite class="user"><ahref="#reg_form" rel="nofollow"> ليلى  </a></cite><span class="datetime secondary-text"><ahref="#reg_form"><script type="text/javascript">
+                     dtime_nums(-4, true)
+                    </script></a></span></div>
+                  <p class="comment-content">
+                    <br>
+                    <br>لقد طلبته و إستلمته بالفعل و بعد ملئ النموذج اتصلوا بي على الفور و أكدوا معي عنوان الوصول و بالفعل أستخدمه الأن و سوف اراجعكم بتقييمي . </p><span class="comment-actions secondary-text"><a class="comment-reply"href="#reg_form"> رد </a></span></div>
+              </li>
+              <li class="comment">
+                <div class="avatar-image-container"><img alt="" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/blog-logo.png"></div>
+                <div class="comment-block">
+                  <div class="comment-header"><cite class="user"><ahref="#reg_form" rel="nofollow"> كريمة  </a></cite><span class="datetime secondary-text"><ahref="#reg_form" rel="nofollow"><script type="text/javascript">
+                     dtime_nums(-3, true)
+                    </script></a></span></div>
+                  <p class="comment-content"> هذه نصيحة عظيمة. أحتاج إلى البدء في إستخدام  هذا المنتج   في حياتي اليومية. </p><span class="comment-actions secondary-text"><a class="comment-reply"href="#reg_form"> رد </a></span></div>
+              </li>
+              <li class="comment">
+                <div class="avatar-image-container"><img alt="" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/blog-logo.png"></div>
+                <div class="comment-block">
+                  <div class="comment-header"><cite class="user"><ahref="#reg_form" rel="nofollow"> منى  </a></cite><span class="datetime secondary-text"><ahref="#reg_form" rel="nofollow"><script type="text/javascript">
+                     dtime_nums(-3, true)
+                    </script></a></span></div>
+                  <p class="comment-content"> شكرا لمشاركتنا هذه المعلومات العظيمة </p><span class="comment-actions secondary-text"><a class="comment-reply"href="#reg_form"> رد </a></span></div>
+              </li>
+              <li class="comment">
+                <div class="avatar-image-container"><img alt="" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/blog-logo.png"></div>
+                <div class="comment-block">
+                  <div class="comment-header"><cite class="user"><ahref="#reg_form" rel="nofollow"> محمد </a></cite><span class="datetime secondary-text"><ahref="#reg_form"><script type="text/javascript">
+                     dtime_nums(-2, true)
+                    </script></a></span></div>
+                  <p class="comment-content"> 
+                    <br>
+                    <br> أنصح الجميع به . أنا استخدمه بالفعل منذ فترة و بدأت اشعر بالفعل بالتأثير بالتخلص من الإجهاد في العين و الصداع المستمر .
+                    <br>
+                  </p><span class="comment-actions secondary-text"><a class="comment-reply"href="#reg_form"> رد </a></span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Can't find substitution for tag [adEnd]-->
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- end content -->
+  </div>
+  </div>
+  <!-- SIDEBAR -->
+  <div id="slider">
+    <div class="sidebar-footer" id="sidebar-wrapper">
+      <div id="mobile-menu"></div>
+      <div class="section" id="sidebar" name="Sidebar">
+        <div class="widget LinkList" data-version="1" id="LinkList1">
+          <h3 style="text-align: center;">متابعة</h3>
+          <div class="widget-content">
+           
+          </div>
+          <div class="clr"></div>
+        </div>
+        <div class="widget Image" data-version="1" id="Image1">
+          <div class="widget-content"><img alt="" height="285" id="Image1_img" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/ava1.jpg" width="281">
+            <br>
+            <div class="widget-content">
+              <p class="MsoNormal" style="background: white;text-align: center; line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">  كيف تخلصت من مشاكل العين و إرهاقها خصوصاً انني أعمل يومياً أمام الكمبيوتر لساعات طويلة ؟ </p>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="widget Text" data-version="1" id="Text1">
+         
+          <div class="clear"></div>
+        </div>
+        <div class="widget ContactForm" data-version="1" id="ContactForm3"></div>
+        <div class="widget HTML" data-version="1" id="HTML101">
+          <h2> بحث </h2>
+          <div class="widget-content">
+            <form action="#" class="search-form" id="searchform" method="post"><input type="hidden" name="task" value="process">
+<input type="hidden" name="flow" value="671">              <fieldset>
+                <input id="s" name="q" placeholder="للبحث اضغط هنا" type="text">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="widget FeaturedPost" data-version="1" id="FeaturedPost1">
+          <h2 class="title"> مشاركة مميزة </h2>
+          <div class="post-summary">
+            <ahref="#reg_form"><img class="image" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/green.jpg"></a>
+            <h3><ahref="#reg_form"> هل تعاني من الصداع أو الصداع النصفي؟ قد يساعد مصباح الضوء الأخضر </a></h3></div>
+          <style type="text/css">
+            .image {
+              width: 100%;
+            }
+          </style>
+        </div>
+        <div class="widget Image" data-version="1" id="Image70">
+          <div class="promo-content">
+            <ahref="#reg_form"><img alt="We love Cats" id="Image70_img" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/product.png"></a>
+          </div>
+        </div>
+        <div class="widget PopularPosts" data-version="1" id="PopularPosts1">
+          <h2> منشورات شائعة </h2>
+          <div class="widget-content popular-posts">
+            <ul>
+              <li>
+                <div class="item-thumbnail-only">
+                  <div class="item-thumbnail">
+                    <ahref="#reg_form"><img alt="" border="0" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/post1.jpg"></a>
+                  </div>
+                  <div  class="item-title"><a href="#reg_form"> وصفة القهوة المثلجة </a></div>
+                </div>
+                <div style="clear: both;"></div>
+              </li>
+              <li>
+                <div class="item-thumbnail-only">
+                  <div class="item-thumbnail">
+                    <ahref="#reg_form"><img alt="" border="0" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/product.png"></a>
+                  </div>
+                  <div class="item-title"><a href="#reg_form"> التخلص من مشاكل العيون </a></div>
+                </div>
+                <div style="clear: both;"></div>
+              </li>
+              <li>
+                <div class="item-thumbnail-only">
+                  <div class="item-thumbnail">
+                    <ahref="#reg_form"><img alt="" border="0" src="./خمس نصائح لتخفيف تعب العيون بسبب وقت الشاشة والضوء الأزرق_files/post3.jpg"></a>
+                  </div>
+                  <div class="item-title"><a href="#reg_form"> تعرف المزيد عن العناكب مع  </a></div>
+                </div>
+                <div style="clear: both;"></div>
+              </li>
+              <li>
+                <div class="item-thumbnail-only">
+                  <div class="item-thumbnail">
+                    <ahref="#reg_form"><img alt="" border="0" src="img/main.png"></a>
+                  </div>
+                  <div class="item-title"><a href="#reg_form"> ثماني نصائح لحفظ ابتسامتك وحياتك </a></div>
+                </div>
+                <div style="clear: both;"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+       
+        
+        <div class="widget BlogArchive" data-version="1" id="BlogArchive1">
+          <h2> ارشيف المدونة </h2>
+          <div class="widget-content">
+            <div id="ArchiveList">
+              <div id="BlogArchive1_ArchiveList">
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2023 </a><span class="post-count" dir="ltr"> -26 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -2 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -2 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -1 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -2 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate expanded"><a class="toggle"href="#reg_form"><span class="zippy toggle-open"> ▼ </span></a><a class="post-count-link"href="#reg_form"> 2023 </a><span class="post-count" dir="ltr"> -48 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate expanded"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2019 </a><span class="post-count" dir="ltr"> -46 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -2 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2023 </a><span class="post-count" dir="ltr"> -64 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -7 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -2 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -7 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2017 </a><span class="post-count" dir="ltr"> -67 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -7 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2023 </a><span class="post-count" dir="ltr"> -87 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -7 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -7 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2015 </a><span class="post-count" dir="ltr"> -114 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -7 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -10 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -10 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -10 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -12 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2014 </a><span class="post-count" dir="ltr"> -102 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -12 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -10 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2013 </a><span class="post-count" dir="ltr"> -155 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -10 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -14 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -17 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -13 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -12 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -15 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -17 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -15 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -11 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2012 </a><span class="post-count" dir="ltr"> -75 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -13 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -3 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -9 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2011 </a><span class="post-count" dir="ltr"> -57 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> نوفمبر </a><span class="post-count" dir="ltr"> -8 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اكتوبر </a><span class="post-count" dir="ltr"> -6 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> سبتمبر </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> اغسطس </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يوليو </a><span class="post-count" dir="ltr"> -7 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يونيو </a><span class="post-count" dir="ltr"> -2 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مايو </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> أبريل </a><span class="post-count" dir="ltr"> -2 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> مارس </a><span class="post-count" dir="ltr"> -5 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> فبراير </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> يناير </a><span class="post-count" dir="ltr"> -4 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="hierarchy">
+                  <li class="archivedate collapsed"><a class="toggle"href="#reg_form"><span class="zippy"> ► </span></a><a class="post-count-link"href="#reg_form"> 2010 </a><span class="post-count" dir="ltr"> -1 </span>
+                    <ul class="hierarchy">
+                      <li class="archivedate collapsed"><a class="post-count-link"href="#reg_form"> ديسمبر </a><span class="post-count" dir="ltr"> -1 </span></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget HTML" data-version="1" id="HTML3">
+          <div class="widget-content"></div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <!-- end sidebar-wrapper -->
+  </div>
+  <!-- END SIDEBAR -->
+  <div class="clr"></div>
+  </div>
+  <!-- end content-wrapper -->
+  
+  <script>
+    $(document).ready(function() {
+      try {
+        moment.locale("");
+        $('.day-before').text(moment().subtract(1, 'day').format('D.MM.YYYY'));
+        $('.day-after').text(moment().add(1, 'day').format('D.MM.YYYY'));
+      } catch (e) {
+        console.log('moment problems!');
+      }
+    });
+  </script>
+<script type="text/javascript">
+   $(document).ready(function(){
+      $("a[href*=#reg_form]").on("click", function(e){
+         var anchor = $(this);
+         $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top
+         }, 2000);
+         e.preventDefault();
+         return false;
+      });
+   });
+</script>
+
+</body></html>
